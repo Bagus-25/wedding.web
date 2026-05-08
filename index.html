@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan | Marselina & Dani</title>
+    <meta name="description" content="Undangan Pernikahan Marselina Zaliyanti & Dani Martinez - 15 Mei 2027">
+    <meta property="og:title" content="Undangan Pernikahan Marselina & Dani">
+    <meta property="og:image" content="slide1.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+
+        <!-- ===== SLIDE 1 ===== -->
+        <section id="slide1">
+            <!-- Background photo -->
+            <img src="slide1.jpg" alt="Wedding Photo 1" class="bg-image">
+            <div class="bg-overlay"></div>
+
+            <!-- Main arch card -->
+            <div class="arch-wrapper">
+                <!-- Floral decoration above arch -->
+                <div class="floral-top">
+                    <img src="wedding_floral_bouquet_1778262307957.png" alt="Bunga Dekorasi">
+                </div>
+
+                <!-- The arch card itself -->
+                <div class="arch-card">
+                    <p class="label-kecil">Undangan Pernikahan</p>
+
+                    <h1 class="nama-script">Marselina Zaliyanti</h1>
+                    <span class="and-text">And</span>
+                    <h1 class="nama-script">Dani Martinez</h1>
+
+                    <p class="invitation-text">
+                        Mengundang Anda untuk turut serta hadir<br>
+                        di acara pernikahan kami, pada:
+                    </p>
+
+                    <div class="date-row">
+                        <div class="date-col">
+                            <p class="date-label">Hari Sabtu</p>
+                        </div>
+                        <div class="date-divider"></div>
+                        <div class="date-col center-col">
+                            <p class="date-month">Mei</p>
+                            <p class="date-number">15</p>
+                            <p class="date-year">2027</p>
+                        </div>
+                        <div class="date-divider"></div>
+                        <div class="date-col">
+                            <p class="date-label">14:00 – 16:00 WIB</p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom circular photos -->
+                    <div class="bottom-photos">
+                        <div class="photo-circle left">
+                            <img src="slide1.jpg" alt="foto kiri">
+                        </div>
+                        <div class="photo-circle right">
+                            <img src="slide2.jpg" alt="foto kanan">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" onclick="scrollToSlide2()">
+                <div class="arrow-wrap">
+                    <div class="arrow"></div>
+                </div>
+                <p>Scroll</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 2 ===== -->
+        <section id="slide2">
+            <img src="slide2.jpg" alt="Wedding Photo 2" class="bg-image">
+            <div class="bg-overlay slide2-overlay"></div>
+
+            <div class="slide2-content">
+                <h2 class="nama-script-s2">Marselina Zaliyanti</h2>
+                <span class="and-text-s2">And</span>
+                <h2 class="nama-script-s2">Dani Martinez</h2>
+
+                <div class="date-s2">
+                    <p class="month-s2">Mei</p>
+                    <p class="day-s2">15</p>
+                    <p class="year-s2">2027</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

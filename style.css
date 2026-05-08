@@ -1,0 +1,410 @@
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
+/* ========== LOADER ========== */
+#loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #f5f0eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+.loader-inner {
+    text-align: center;
+}
+
+.loader-ring {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ddd;
+    border-top: 3px solid #c9a84c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+
+.loader-inner p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========== SCROLL CONTAINER ========== */
+.container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ========== SECTIONS ========== */
+section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ========== BACKGROUND ========== */
+.bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: 1;
+}
+
+/* ========== SLIDE 1 ========== */
+
+/* Wrapper to vertically center the arch + floral */
+.arch-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 380px;
+    margin-top: 0;
+}
+
+/* Floral image that overflows above the arch */
+.floral-top {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    z-index: 12;
+    pointer-events: none;
+}
+
+.floral-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Arch card (glassmorphism grey) */
+.arch-card {
+    width: 100%;
+    background: rgba(100, 108, 120, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 200px 200px 30px 30px;
+    padding: 90px 28px 0 28px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    overflow: visible;
+    position: relative;
+    animation: fadeUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Labels */
+.label-kecil {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 10px;
+}
+
+/* Script names */
+.nama-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
+    line-height: 1.15;
+    margin: 2px 0;
+}
+
+.and-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: rgba(255,255,255,0.85);
+    display: block;
+    margin: 4px 0;
+}
+
+/* Invitation text */
+.invitation-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    margin: 16px 0 12px;
+}
+
+/* Date row */
+.date-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 0;
+}
+
+.date-col {
+    flex: 1;
+    text-align: center;
+}
+
+.center-col {
+    flex: 1.2;
+}
+
+.date-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+}
+
+.date-month {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2px;
+}
+
+.date-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #c9a84c;
+    line-height: 1;
+}
+
+.date-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+}
+
+.date-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255,255,255,0.25);
+    flex-shrink: 0;
+}
+
+/* Bottom circular photos */
+.bottom-photos {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 18px;
+    margin-left: -28px;
+    margin-right: -28px;
+}
+
+.photo-circle {
+    width: 52%;
+    aspect-ratio: 1;
+    border-radius: 50% 50% 30px 30px;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.3);
+    position: relative;
+}
+
+.photo-circle.left {
+    transform: translateX(12px);
+    z-index: 1;
+}
+
+.photo-circle.right {
+    transform: translateX(-12px);
+    z-index: 0;
+}
+
+.photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ========== SCROLL INDICATOR ========== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    color: white;
+}
+
+.scroll-indicator p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.arrow-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    width: 14px;
+    height: 14px;
+    border-right: 3px solid rgba(255,255,255,0.9);
+    border-bottom: 3px solid rgba(255,255,255,0.9);
+    transform: rotate(45deg);
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40%  { transform: translateX(-50%) translateY(-12px); }
+    60%  { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* ========== SLIDE 2 ========== */
+.slide2-overlay {
+    background: rgba(200, 195, 188, 0.35);
+}
+
+.slide2-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+    animation-play-state: paused;
+}
+
+.slide2-content.visible {
+    animation-play-state: running;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.nama-script-s2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    line-height: 1.2;
+    margin: 4px 0;
+}
+
+.and-text-s2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.85);
+    display: block;
+    margin: 6px 0;
+}
+
+.date-s2 {
+    margin-top: 20px;
+}
+
+.month-s2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 4px;
+}
+
+.day-s2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #c9a84c;
+    line-height: 1;
+}
+
+.year-s2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: #c9a84c;
+    margin-top: 4px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 400px) {
+    .nama-script { font-size: 2.3rem; }
+    .arch-card { padding: 80px 20px 0 20px; }
+    .nama-script-s2 { font-size: 2.6rem; }
+}
+
+@media (min-height: 800px) {
+    .arch-card { border-radius: 220px 220px 40px 40px; }
+}
